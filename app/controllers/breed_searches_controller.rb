@@ -2,9 +2,14 @@ class BreedSearchesController < ApplicationController
   def show
     @form = BreedSearchForm.new(search_params)
 
-    return if @form.search
-
-    render :new
+    if @form.valid?
+      @response = @form.search
+    else
+      render :error
+    end
+  rescue Breeds::SearchApiError => e
+    @message = e
+    render :error
   end
 
   def new
@@ -14,6 +19,6 @@ class BreedSearchesController < ApplicationController
   private
 
   def search_params
-    params.require(:breed_search_form).permit(:breed)
+    params.require(:breed_search_form).permit(:query)
   end
 end

@@ -5,6 +5,7 @@ ruby '3.2.0'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.3'
 gem 'haml-rails'
+gem 'http'
 gem 'importmap-rails'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'

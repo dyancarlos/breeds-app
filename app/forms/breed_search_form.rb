@@ -1,11 +1,11 @@
 class BreedSearchForm
   include ActiveModel::Model
 
-  attr_accessor :breed
+  attr_accessor :query
 
-  validates :breed, presence: true
+  validates :query, presence: true
 
   def search
-    nil if invalid?
+    Breeds::SearchApiService.new(query: query).call
   end
 end
