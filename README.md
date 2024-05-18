@@ -1,24 +1,18 @@
-# README
+# Breeds App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Folder structure
+`/services` contains the service objects
+`/errors` contains the customized errors files
+`/forms` contains the form objects
 
-Things you may want to cover:
+## Setup the project
+```
+bundle
+```
 
-* Ruby version
+## Run the specs
+We have `request` and `feature` tests. To run all:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rspec
+```
