@@ -20,6 +20,6 @@ class Breeds::SearchApiService
   end
 
   def response
-    HTTP.get("https://dog.ceo/api/breed/#{@query}/images/random").to_s
+    @response ||= HTTP.get("https://dog.ceo/api/breed/#{@query}/images/random").to_s
   end
 end
