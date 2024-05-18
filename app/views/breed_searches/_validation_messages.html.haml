@@ -1,0 +1,3 @@
+- if @form.errors.any?
+  - @form.errors.full_messages.each do |message|
+    .alert.alert-danger= message

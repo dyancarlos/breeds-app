@@ -8,7 +8,7 @@ class BreedSearchesController < ApplicationController
       render :error
     end
   rescue Breeds::SearchApiError => e
-    @message = e
+    flash.now[:error] = e
     render :error
   end
 
