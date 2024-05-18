@@ -10,7 +10,20 @@ RSpec.describe 'Breeds Search', type: :system do
       fill_in 'breed_search_form_query', with: 'retriever'
       click_on 'Search'
       within('#result') do
-        expect(page).to have_text 'retriever'
+        expect(page).to have_text 'Retriever'
+        expect(find('.card-img-top')[:src]).to eq('https://images.dog.ceo/breeds/hound-basset/n02088238_6161.jpg')
+      end
+    end
+
+    it 'allows to search by breed with two names' do
+      stub_request(:get, 'https://dog.ceo/api/breed/frise/bichon/images/random')
+        .to_return(status: 200, body: { status: 'success', message: 'https://images.dog.ceo/breeds/hound-basset/n02088238_6161.jpg' }.to_json)
+
+      visit '/'
+      fill_in 'breed_search_form_query', with: 'bichon frise'
+      click_on 'Search'
+      within('#result') do
+        expect(page).to have_text 'Bichon frise'
         expect(find('.card-img-top')[:src]).to eq('https://images.dog.ceo/breeds/hound-basset/n02088238_6161.jpg')
       end
     end

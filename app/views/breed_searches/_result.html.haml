@@ -1,4 +1,4 @@
 .card
   = image_tag @response.message, class: 'card-img-top'
   .card-body
-    %h5.card-title= @form.query
+    %h5.card-title= @form.query.capitalize

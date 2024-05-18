@@ -1,7 +1,6 @@
 = render 'shared/flash_messages'
 = render 'validation_messages'
 
-%h4.mb-3= 'Breed Information'
 = form_with model: @form,
             scope: :breed_search_form,
             url: breed_searches_path,

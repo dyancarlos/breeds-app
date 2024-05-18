@@ -12,6 +12,10 @@ class BreedSearchForm
   private
 
   def normalized_query
-    query.downcase
+    query
+      .downcase
+      .split
+      .reverse
+      .join('/')
   end
 end
