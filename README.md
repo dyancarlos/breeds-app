@@ -1,9 +1,9 @@
 # Breeds App
 
 ### Folder structure
-`/services` contains the service objects
-`/errors` contains the customized errors files
-`/forms` contains the form objects
+- `/services` contains the service objects
+- `/errors` contains the customized errors files
+- `/forms` contains the form objects
 
 ## Setup the project
 ```
